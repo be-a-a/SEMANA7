@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">😺PetPlanner🐶</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-wrapper">
+
+    <h1 class="bienvenida">Bienvenido {{ nombre }}</h1>
+
+    <ion-button expand="block" class="btn-opcion" [routerLink]="['/registrar-mascotas']">
+      Registrar Mascota
+    </ion-button>
+
+    <ion-button expand="block" class="btn-opcion" [routerLink]="['/agenda']">
+      Ver Agenda
+    </ion-button>
+
+    <ion-button expand="block" class="btn-opcion" [routerLink]="['/info-razas']">
+      ¿Qué raza es mi mascota?
+    </ion-button>
+
+    <!-- 📸 Botón para cámara -->
+    <ion-button expand="block" class="btn-opcion" (click)="tomarFoto()">
+      Tomar Foto
+    </ion-button>
+
+    <!-- 📍 Botón para geolocalización -->
+    <ion-button expand="block" class="btn-opcion" (click)="obtenerUbicacion()">
+      Ubicación
+    </ion-button>
+
+    <ion-button expand="block" class="btn-cerrar" (click)="cerrarSesion()">
+      Cerrar sesión
+    </ion-button>
+
+    <lottie-player
+      class="gato-cayendo"
+      src="assets/Animations/GatoCayendo.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+
+    <div class="home-footer">
+      © 2025 PetPlanner. Todos los derechos reservados.
+    </div>
+  </div>
+</ion-content>

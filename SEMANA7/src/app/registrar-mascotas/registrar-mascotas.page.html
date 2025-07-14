@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">Registrar Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-wrapper">
+
+    <!-- Nombre -->
+    <p class="etiqueta-campo">Ingrese el nombre de su mascota*</p>
+    <ion-item class="input-personalizado">
+      <ion-input placeholder="Nombre" [(ngModel)]="nombreMascota"></ion-input>
+    </ion-item>
+
+    <!-- Tipo -->
+    <p class="etiqueta-campo">Seleccione el tipo de mascota*</p>
+    <ion-item class="input-personalizado">
+      <ion-select placeholder="Tipo" [(ngModel)]="tipoMascota">
+        <ion-select-option value="perro">Perro</ion-select-option>
+        <ion-select-option value="gato">Gato</ion-select-option>
+        <ion-select-option value="otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Raza -->
+    <p class="etiqueta-campo">Ingrese la raza de su mascota (opcional)</p>
+    <ion-item class="input-personalizado">
+      <ion-input placeholder="Raza" [(ngModel)]="razaMascota"></ion-input>
+    </ion-item>
+
+    <!-- Fecha de nacimiento -->
+    <p class="etiqueta-campo">Ingrese la fecha de nacimiento*</p>
+    <ion-item class="input-personalizado fecha-nacimiento">
+      <ion-datetime placeholder="Seleccione una fecha" presentation="date" [(ngModel)]="fechaNacimiento"></ion-datetime>
+    </ion-item>
+
+    <!-- Color -->
+    <p class="etiqueta-campo">Color de la mascota (opcional)</p>
+    <ion-item class="input-personalizado">
+      <ion-input placeholder="Color" [(ngModel)]="colorMascota"></ion-input>
+    </ion-item>
+
+    <!-- Peso -->
+    <p class="etiqueta-campo">Peso en kilogramos (ej: 10.5)*</p>
+    <ion-item class="input-personalizado">
+      <ion-input type="number" placeholder="Peso" [(ngModel)]="pesoMascota"></ion-input>
+    </ion-item>
+
+    <!-- Altura -->
+    <p class="etiqueta-campo">Altura en centímetros*</p>
+    <ion-item class="input-personalizado">
+      <ion-input type="number" placeholder="Altura" [(ngModel)]="alturaMascota"></ion-input>
+    </ion-item>
+
+    <!-- Botones -->
+    <ion-button expand="block" class="btn-guardar" (click)="guardarMascota()">Guardar</ion-button>
+    <ion-button expand="block" class="btn-volver" [routerLink]="['/home']">Volver al inicio</ion-button>
+
+    <div class="home-footer">
+      © 2025 PetPlanner. Todos los derechos reservados.
+    </div>
+
+  </div>
+</ion-content>

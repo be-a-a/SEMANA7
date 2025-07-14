@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">Razas 🐶</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="info-razas-wrapper">
+
+    <ion-item>
+      <ion-label>Selecciona una raza</ion-label>
+      <ion-select [(ngModel)]="razaSeleccionada" (ionChange)="cargarImagenRaza()">
+        <ion-select-option *ngFor="let raza of razas" [value]="raza">
+          {{ raza }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="imagenRaza" class="imagen-raza-container">
+      <img [src]="imagenRaza" alt="Imagen de raza" style="width: 100%; border-radius: 10px;" />
+
+      <div class="btn-ver-otra-container">
+        <ion-button (click)="cargarImagenRaza()">
+          Ver otra imagen
+        </ion-button>
+      </div>
+
+
+    </div>
+
+    <ion-button expand="block" [routerLink]="['/home']">
+      Volver al inicio
+    </ion-button>
+
+    <lottie-player
+      class="gato-fantasma"
+      src="assets/Animations/GatoFantasma.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+
+    <div class="home-footer">
+      © 2025 PetPlanner. Todos los derechos reservados.
+    </div>
+
+  </div>
+</ion-content>

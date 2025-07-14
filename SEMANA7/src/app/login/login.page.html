@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">😺PetPlanner🐶</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-wrapper">
+
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Iniciar Sesión</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="input-personalizado">
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <ion-item class="input-personalizado">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" class="btn-login ion-margin-top" (click)="login()">
+          Entrar
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <lottie-player
+      class="gato-fantasma"
+      src="assets/Animations/GatoFantasma.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+
+    <div class="login-footer">
+      © 2025 PetPlanner. Todos los derechos reservados.
+    </div>
+  </div>
+</ion-content>

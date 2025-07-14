@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">Editar Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="detalle-wrapper">
+
+    <p class="etiqueta-campo">Actualizar nombre</p>
+    <ion-item class="input-personalizado">
+      <ion-input [(ngModel)]="mascota.nombre" placeholder="Nombre"></ion-input>
+    </ion-item>
+
+    <p class="etiqueta-campo">Actualizar tipo</p>
+    <ion-item class="input-personalizado">
+      <ion-select [(ngModel)]="mascota.tipo" placeholder="Tipo">
+        <ion-select-option value="perro">Perro</ion-select-option>
+        <ion-select-option value="gato">Gato</ion-select-option>
+        <ion-select-option value="otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <p class="etiqueta-campo">Actualizar raza</p>
+    <ion-item class="input-personalizado">
+      <ion-input [(ngModel)]="mascota.raza" placeholder="Raza"></ion-input>
+    </ion-item>
+
+    <p class="etiqueta-campo">Actualizar fecha de nacimiento</p>
+    <ion-item class="input-personalizado">
+      <ion-datetime [(ngModel)]="mascota.fechaNacimiento" presentation="date" placeholder="Fecha de nacimiento"></ion-datetime>
+    </ion-item>
+
+    <p class="etiqueta-campo">Actualizar color</p>
+    <ion-item class="input-personalizado">
+      <ion-input [(ngModel)]="mascota.color" placeholder="Color"></ion-input>
+    </ion-item>
+
+    <p class="etiqueta-campo">Actualizar peso (kg)</p>
+    <ion-item class="input-personalizado">
+      <ion-input type="number" [(ngModel)]="mascota.peso" placeholder="Peso"></ion-input>
+    </ion-item>
+
+    <p class="etiqueta-campo">Actualizar altura (cm)</p>
+    <ion-item class="input-personalizado">
+      <ion-input type="number" [(ngModel)]="mascota.altura" placeholder="Altura"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="primary" (click)="guardarCambios()">Guardar cambios</ion-button>
+    <ion-button expand="block" color="danger" (click)="eliminarMascota()">Eliminar mascota</ion-button>
+    <ion-button expand="block" class="btn-volver" [routerLink]="['/agenda']">Volver a agenda</ion-button>
+
+
+    <div class="home-footer">
+      © 2025 PetPlanner. Todos los derechos reservados.
+    </div>
+
+  </div>
+</ion-content>

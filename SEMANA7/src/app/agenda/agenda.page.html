@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">Agenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="agenda-wrapper">
+
+    <ion-searchbar
+      placeholder="Buscar por nombre o tipo"
+      [(ngModel)]="terminoBusqueda"
+      (ionInput)="filtrarMascotas()"
+      showClearButton="always">
+    </ion-searchbar>
+
+      <ion-card
+        *ngFor="let mascota of mascotasFiltradas; let i = index"
+        class="card-mascota">
+
+        <ion-text color="medium" *ngIf="mascotasFiltradas.length === 0 && terminoBusqueda">
+          <p class="text-center">No se encontraron mascotas con ese nombre o tipo 🐾</p>
+        </ion-text>
+
+
+        <ion-card-header>
+        <ion-card-title>{{ mascota.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Tipo:</strong> {{ mascota.tipo }}</p>
+        <p *ngIf="mascota.raza"><strong>Raza:</strong> {{ mascota.raza }}</p>
+        <p *ngIf="mascota.color"><strong>Color:</strong> {{ mascota.color }}</p>
+        <p><strong>Nacimiento:</strong> {{ mascota.fechaNacimiento | date }}</p>
+        <p><strong>Peso:</strong> {{ mascota.peso }} kg</p>
+        <p><strong>Altura:</strong> {{ mascota.altura }} cm</p>
+
+        <div class="btn-detalle-container">
+          <ion-button size="small" class="btn-detalle" (click)="verDetalle(mascota)"
+          >
+            Actualizar información
+          </ion-button>
+        </div>
+      </ion-card-content>
+
+
+
+    </ion-card>
+
+
+    <lottie-player
+      class="gato-fantasma"
+      src="assets/Animations/GatoFantasma.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+
+    <ion-button expand="block" class="btn-volver" [routerLink]="['/home']">
+      Volver al inicio
+    </ion-button>
+
+    <div class="home-footer">
+      © 2025 PetPlanner. Todos los derechos reservados.
+    </div>
+
+  </div>
+</ion-content>
